@@ -1,17 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="NgApp">
 
 <head>
 
 <title>Coursera AngularJS Test</title>
 <meta charset="utf-8" />
+<script src="angular.js"></script>
+<script src="app.js"></script>
 
 </head>
 
 <body>
+<div ng-controller="NgController">
 
-<div> ball test </div>
+<div>Name Calculator</div>
+<br />
+<div>Input your name: </div>
+<input type="text" ng-model="Name" ng-keyup="ProcessNumericValue();" />
+<div>Total Numeric value is: {{TotalValue}}</div>
 
+
+</div>
 </body>
 
 
