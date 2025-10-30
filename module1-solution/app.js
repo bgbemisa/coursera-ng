@@ -3,21 +3,23 @@
 
   'use strict';
 
-  angular
-  .module('LunchCheck', [])
-  .controller('LunchCheckController');
-  Controller.$inject = ['$scope'];
+  angular.module('LunchCheck', [])
+  .controller('LunchCheckController', Controller);
+  
+  Controller.$inject = [$scope];
+
   function Controller($scope)
   {
 
     $scope.LunchItems = "";
     $scope.Message = "";
-    
+
     $scope.ProcessItems = function()
     {
-      const ItemArray = LunchItems.split(",");
 
-      if(ItemArray.length == 0)
+      const ItemArray = $scope.LunchItems.split(",");
+
+      if($scope.LunchItems == "")
       {
         $scope.Message = "Please enter data first";
       }
@@ -34,9 +36,7 @@
 
     };
 
-
   };
-  
 
 
 }
